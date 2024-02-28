@@ -94,16 +94,14 @@ struct StudyRow: View {
     var study: Study
     
     var body: some View {
-        ZStack {
+        ZStack (alignment: .leading){
             Image(study.image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .clipped()
-                .cornerRadius(3)
-            HStack (alignment: .top, spacing: 5){
-                Image(study.logo)
-                    .resizable()
-                    .frame(width: 5, height: 5, alignment: .leading)
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(10)
+            HStack (alignment: .center, spacing: 20){
+                Image(systemName: study.logo)
+                    .foregroundColor(.gray)
                 VStack(alignment: .leading) {
                     Text(study.name)
                         .font(.headline)
@@ -111,13 +109,16 @@ struct StudyRow: View {
                     Text(study.description)
                         .font(.caption)
                         .foregroundColor(.gray)
-                    Spacer()
+                    //Spacer()
                     Button(action: {
                         // Enroll in the study
                     }) {
-                        Text("Enroll")
-                            .foregroundColor(.blue)
-                            .cornerRadius(10)
+                        HStack {
+                            Text("Enroll")
+                                .foregroundColor(.blue)
+                            Image(systemName: "arrowshape.right.fill")
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
             }
