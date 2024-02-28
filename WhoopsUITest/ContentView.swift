@@ -58,7 +58,7 @@ struct StudyRow: View {
   }
 
 struct Study: Identifiable {
-  let id = UUID() // Use a unique identifier like a UUID
+  let id = UUID()
   var name: String
   var description: String
   var image: String
@@ -77,7 +77,7 @@ struct StudyDetailView: View {
       Button(action: {
         // Unirse al estudio
       }) {
-        Text("Unirse al estudio")
+        Text("Join study")
       }
     }
   }
