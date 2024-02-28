@@ -98,11 +98,11 @@ struct StudyRow: View {
             Image(study.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .cornerRadius(10)
+                .cornerRadius(20)
             HStack (alignment: .center, spacing: 20){
                 Image(systemName: study.logo)
                     .foregroundColor(.gray)
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 10) {
                     Text(study.name)
                         .font(.headline)
                         .foregroundColor(.white)
